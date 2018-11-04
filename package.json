@@ -1,7 +1,7 @@
 {
-  "name": "polies",
-  "version": "1.0.0",
-  "description": "",
+  "name": "bstring-errors",
+  "version": "0.0.0",
+  "description": "bstring based address error detector.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nodar-chkuaselidze/polies#readme",
   "dependencies": {
+    "bcfg": "^0.1.3",
     "bsert": "0.0.4",
     "n64": "^0.2.2"
   }
