@@ -8,14 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodar-chkuaselidze/polies.git"
+    "url": "git+https://github.com/nodar-chkuaselidze/bstring-errors.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodar-chkuaselidze/polies/issues"
+    "url": "https://github.com/nodar-chkuaselidze/bstring-errors/issues"
   },
-  "homepage": "https://github.com/nodar-chkuaselidze/polies#readme",
+  "bin": {
+    "bcashaddr-errors": "./bin/cashaddr"
+  },
+  "homepage": "https://github.com/nodar-chkuaselidze/bstring-errors#readme",
   "dependencies": {
     "bcfg": "^0.1.3",
     "bsert": "0.0.4",

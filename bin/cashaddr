@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const Config = require('bcfg');
+const {errorLine} = require('../lib/helpers');
+const {locateErrors} = require('../lib/cashaddrerr');
+
+const config = new Config('cashaddr');
+
+config.load({
+  argv: true,
+  env: true
+});
+
+const help = config.bool('help');
+
+if (help) {
+  printHelp();
+  return;
+}
+
+const defaultPrefix = config.str('prefix', 'bitcoincash');
+const addresses = config.argv;
+
+for (const addr of addresses) {
+  let errors;
+  try {
+    errors = locateErrors(addr, defaultPrefix);
+  } catch (e) {
+    console.error(`Error: Could not parse "${addr}"`);
+    continue;
+  }
+  console.log(addr);
+  console.log(errorLine(addr, errors));
+}
+
+function printHelp() {
+  const msg =
+  `cashaddr-errors:
+  Usage:
+    cashaddr-errors addresses...
+    cashaddr-errors address0 address1...
+
+  Options:
+    -h\tShow this message
+    --prefix\tDefault prefix`;
+
+  console.log(msg);
+}
