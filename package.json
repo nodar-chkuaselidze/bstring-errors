@@ -1,0 +1,23 @@
+{
+  "name": "polies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodar-chkuaselidze/polies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodar-chkuaselidze/polies/issues"
+  },
+  "homepage": "https://github.com/nodar-chkuaselidze/polies#readme",
+  "dependencies": {
+    "bsert": "0.0.4",
+    "n64": "^0.2.2"
+  }
+}
