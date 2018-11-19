@@ -78,3 +78,13 @@ console.log(cashaddr.locateErrors(cashaddr2, prefix));
 // Throws "Invalid Address, Could not locate errors."
 console.log(cashaddr.locateErrors(cashaddr3, prefix));
 ```
+
+### bin example
+```
+$ bech32-errors bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+
+$ bech32-errors bc1qw500d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4 
+bc1qw500d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+       ^
+```
