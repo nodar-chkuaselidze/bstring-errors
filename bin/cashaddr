@@ -23,12 +23,15 @@ if (help) {
 const defaultPrefix = config.str('prefix', 'bitcoincash');
 const addresses = config.argv;
 
+if (addresses.length === 0)
+  printHelp();
+
 for (const addr of addresses) {
   let errors;
   try {
     errors = locateErrors(addr, defaultPrefix);
   } catch (e) {
-    console.error(`Error: Could not parse "${addr}"`);
+    console.error(`Error: "${addr}" - ${e.message}`);
     continue;
   }
   console.log(addr);
