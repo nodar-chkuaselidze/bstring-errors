@@ -47,7 +47,7 @@ function printHelp() {
 
   Options:
     -h\tShow this message
-    --prefix\tDefault prefix`;
+    --prefix\tDefault prefix [bitcoincash]`;
 
   console.log(msg);
 }

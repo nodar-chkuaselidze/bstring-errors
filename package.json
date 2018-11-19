@@ -2,7 +2,7 @@
   "name": "bstring-errors",
   "version": "0.0.0",
   "description": "bstring based address error detector.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,8 @@
     "url": "https://github.com/nodar-chkuaselidze/bstring-errors/issues"
   },
   "bin": {
-    "bcashaddr-errors": "./bin/cashaddr"
+    "bcashaddr-errors": "./bin/cashaddr",
+    "bech32-errors": "./bin/bech32"
   },
   "homepage": "https://github.com/nodar-chkuaselidze/bstring-errors#readme",
   "dependencies": {
