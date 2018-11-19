@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const Config = require('bcfg');
+const {errorLine} = require('../lib/helpers');
+const {locateErrors} = require('../lib/bech32-sipa');
+
+const config = new Config('bech32');
+
+config.load({
+  argv: true,
+  env: true
+});
+
+const help = config.bool('help');
+
+if (help) {
+  printHelp();
+  return;
+}
+
+const addresses = config.argv;
+
+if (addresses.length === 0)
+  printHelp();
+
+for (const addr of addresses) {
+  let errors;
+  try {
+    errors = locateErrors(addr);
+  } catch (e) {
+    console.error(`Error: "${addr}" - ${e.message}`);
+    continue;
+  }
+  console.log(addr);
+  console.log(errorLine(addr, errors));
+}
+
+function printHelp() {
+  const msg =
+  `bech32-errors:
+  Usage:
+    bech32-errors addresses...
+    bech32-errors address0 address1...
+
+  Options:
+    -h\tShow this message`;
+
+  console.log(msg);
+}
