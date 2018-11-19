@@ -1,6 +1,6 @@
 {
   "name": "bstring-errors",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "bstring based address error detector.",
   "main": "./lib/index.js",
   "scripts": {
